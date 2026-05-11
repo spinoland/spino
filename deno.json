@@ -3,18 +3,19 @@
     "hono": "jsr:@hono/hono@^4.12.18"
   },
   "tasks": {
-    "start": "deno run --allow-net src/main.ts",
-    "dev": "deno run --watch --allow-net src/main.ts"
+    "start": "deno run --allow-net --allow-read src/main.ts",
+    "dev": "deno run --watch --allow-net --allow-read src/main.ts",
+    "test": "deno test --allow-net --allow-read tests/"
   },
   "compilerOptions": {
     "jsx": "precompile",
     "jsxImportSource": "hono/jsx"
   },
   "fmt": {
-    "include": ["config/", "src/"],
+    "include": ["config/", "src/", "tests/"],
     "semiColons": false
   },
   "lint": {
-    "include": ["config/", "src/"]
+    "include": ["config/", "src/", "tests/"]
   }
 }
